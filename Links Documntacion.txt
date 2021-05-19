@@ -1,0 +1,8 @@
+https://www.freecodecamp.org/news/developing-and-deploying-micro-frontends-with-single-spa/
+
+https://github.com/vimhash/micro-frontends
+
+
+migrate to single spa 
+
+https://dev.to/abdelrahman_hussein/from-monolithic-to-micro-frontends-part-2-3oa0
