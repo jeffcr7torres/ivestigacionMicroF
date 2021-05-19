@@ -1,0 +1,6 @@
+{
+    "extends": ["@ec.com.kruger/eslint-config-kruger"],
+    "rules": {
+        "no-console": 0
+    }
+}

@@ -1,0 +1,103 @@
+<form class="form" #form="ngForm" novalidate [formSubmitted]="form">
+	<k-layout [appName]="'Web Base Test Cache'" [pageTitle]="'Web Base'" [headerTemplate]="headerTemplate"
+		[sidebarTemplate]="sidebarTemplate" [showHeader]='true'>
+		<div class="row p-5">
+			<div class="col-md-12">
+				<p-table [value]="paginate_results" [paginator]="true" [rows]="rows" paginatorPosition="top" [pageLinks]="rows"
+					[lazy]="true" (onLazyLoad)="paginate($event)" [totalRecords]="results.length">
+					<ng-template pTemplate="paginatorleft" let-state>
+						<a class="ui-state-disabled">Pag. {{state.page + 1}} de {{state.pageCount}}</a>
+					</ng-template>
+					<ng-template pTemplate="paginatorright" let-state>
+						<a class="ui-state-disabled">Total: {{state.totalRecords}}</a>
+					</ng-template>
+					<ng-template pTemplate="header">
+						<tr>
+							<th>Codigo Funcionario</th>
+							<th>Nombre Completo</th>
+						</tr>
+					</ng-template>
+					<ng-template pTemplate="body" let-campaign let-rowIndex="rowIndex">
+						<tr>
+							<td>{{campaign.codigoFuncionario}}</td>
+							<td>{{campaign.nombreCompleto}}</td>
+						</tr>
+					</ng-template>
+				</p-table>
+			</div>
+
+		</div>
+
+	</k-layout>
+
+	<ng-template #headerTemplate>
+		<li class="nav-item btn-group" dropdown>
+			<a class="nav-link dropdown-toggle" dropdownToggle aria-controls="dropdown-basic">
+				<i class="fa fa-bars"></i> Mensajes
+			</a>
+			<ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+				<li role="menuitem">
+					<a class="dropdown-item text-success" (click)="messageSuccess()">
+						<i class="fa fa-check "></i> Success
+					</a>
+				</li>
+				<li role="menuitem">
+					<a class="dropdown-item text-info" (click)="messageInfo()">
+						<i class="fa fa-info"></i> Info
+					</a>
+				</li>
+				<li class="divider dropdown-divider"></li>
+				<li role="menuitem">
+					<a class="dropdown-item text-warning" (click)="messageWarning()">
+						<i class="fa fa-exclamation-triangle"></i> Warning
+					</a>
+				</li>
+				<li role="menuitem">
+					<a class="dropdown-item text-danger" (click)="messageError()">
+						<i class="fa fa-times"></i> Error
+					</a>
+				</li>
+			</ul>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" (formValidation)="formValid()">
+				<i class="fa fa-save"></i> Validation Form
+			</a>
+		</li>
+		<li class="nav-item" *kAccess="['HOME-DUPLICATE', 'view-profile']">
+			<a class="nav-link" (formValidation)="formValid()">
+				<i class="fa fa-save"></i> Validation Form
+			</a>
+		</li>
+	</ng-template>
+	<ng-template #sidebarTemplate>
+		<div class="card">
+			<div class="card-header">
+				Filtros de b&uacute;squeda
+
+				<a class="float-right" (click)="$event.preventDefault(); resultForm.reset()" href="#">
+					<i class="fa fa-eraser text-primary" title="Borrar"></i>
+				</a>
+			</div>
+			<div class="card-body">
+				<k-fieldset [kFieldsetLegend]="'k-search-input'">
+					<form class="form" #resultForm="ngForm" novalidate (submitValidForm)="clickSearch(resultForm)">
+						<div class="col-md-12 form-group">
+							<k-search-input-text id="processName" name="processName" [(ngModel)]="processName"
+								[label]="'Process name:'" [optionSettings]="optionSettingsAll"
+								[showComparatorType]="false" [placeholder]="'Nombre Funcionario'" [maxlength]="'100'"
+								(searchOnEnter)="clickSearch(resultForm)" [upperInputValue]="true"
+								[regularExpression]="'[a-zñA-ZÑ]'" [required]="true" error-label="Process name">
+							</k-search-input-text>
+						</div>
+
+						<div class="row k-search-button float-right">
+							<!--button (click)="printModel();" type="button">Imprimir</button-->
+							<button class="btn btn-primary mr-1"><em class="fa fa-search"></em> Buscar</button>
+						</div>
+					</form>
+				</k-fieldset>
+			</div>
+		</div>
+	</ng-template>
+</form>

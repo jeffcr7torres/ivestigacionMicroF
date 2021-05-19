@@ -1,0 +1,10 @@
+{
+  "security": {
+    "url": "https://aplpre.favorita.ec/auth",
+    "realm": "CFAVORITA-SSO-INTRANET",
+    "clientId": "KWEBBASE"
+  },
+  "CATALOGOS" : {
+    "CODIGO_TIPO_GENERO": 2
+  }
+}
