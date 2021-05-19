@@ -1,0 +1,9 @@
+{
+  "security": {
+    "url": "https://keycloak.krugernetes.com/auth",
+    "realm": "cfavorita",
+    "clientId": "KWEBBASE"
+  },
+  "CATALOGOS" : {
+  }
+}

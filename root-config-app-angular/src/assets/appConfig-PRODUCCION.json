@@ -1,0 +1,10 @@
+{
+  "security": {
+    "url": "https://www.cfavorita.ec/auth",
+    "realm": "CFAVORITA-SSO-INTRANET",
+    "clientId": "KWEBBASE"
+  },
+  "CATALOGOS" : {
+    "CODIGO_TIPO_GENERO": 3
+  }
+}

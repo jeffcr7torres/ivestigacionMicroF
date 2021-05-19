@@ -1,0 +1,24 @@
+{
+  "/auth": {
+    "target": "http://10.200.101.223:8084",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/publixServices": {
+    "target": "http://localhost:8080",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/cacheServices": {
+    "target": "http://localhost:8081",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/datosCorporativo": {
+    "target": "http://10.190.6.21:12380",
+    "secure": false,
+    "logLevel": "debug"
+  }
+  
+  
+}

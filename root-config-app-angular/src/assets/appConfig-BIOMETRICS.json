@@ -1,0 +1,9 @@
+{
+  "security": {
+    "url": "https://keycloak.krugernetes.com/auth",
+    "realm": "BIOMETRICS",
+    "clientId": "KWEBBASE"
+  },
+  "CATALOGOS" : {
+  }
+}
